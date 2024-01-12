@@ -1,7 +1,7 @@
 "use client"
 
 import Image from 'next/image'
-import Orders from '../../components/Orders';
+import Orders from '@/components/Orders';
 
 export default function Home() {
   return (
