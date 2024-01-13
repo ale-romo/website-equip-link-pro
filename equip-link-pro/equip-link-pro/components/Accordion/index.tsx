@@ -13,20 +13,20 @@ const Accordion = ({ items }: Props) => {
   const [isOpen, setIsOpen] = useState<number | null>(null);
 
   return (
-    <ul>
+    <>
       {items.map(({ title, content }, i) => (
-        <li key={i}>
+        <div key={i}>
           <button onClick={() => setIsOpen(isOpen === i ? null : i)} className="w-full">
             <h3>{title}</h3>
           </button>
-          <div className={`transition-all duration-300 h-${isOpen === i ? 'auto' : '0'} overflow-hidden`}>
+          <div className={`transition-all duration-500 ${isOpen === i ? 'max-h-screen' : 'max-h-0'} overflow-hidden`}>
             <p className="pt-3 pb-8">
               {content}
             </p>
           </div>
-        </li>
+        </div>
       ))}
-    </ul>
+    </>
   );
 };
 
