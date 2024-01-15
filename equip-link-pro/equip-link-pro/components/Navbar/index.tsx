@@ -46,13 +46,13 @@ const Navbar = ({ navItems }: Props) => {
   return <div className="flex p-4 justify-between items-center">
     <Link href="/" title="Equip Link Pro" className="flex items-center gap-4 text-2xl font-bold z-20">
       <span onClick={() => isOpen && setIsOpen(false)} className="flex items-center gap-4">
-        <Image src="/images/logo.svg" alt="Equip Link Pro" height="32" width="30" className="h-auto" />
+        <Image src="/images/logo.svg" alt="Equip Link Pro" height="32" width="30" className="h-auto w-10" />
         Equip Link Pro
       </span>
     </Link>
     <div className="flex gap-4 h-full">
       <nav className={`${isOpen ? 'h-full' : 'h-0 lg:h-full'} w-full bg-white fixed top-0 left-0  z-10 overflow-hidden transition-all duration-300  lg:relative lg:z-0`}>
-        <div className="p-10 pt-20 lg:p-0 lg:pt-0 flex flex-col lg:flex-rowlg:bg-transparent gap-x-4">
+        <div className="p-10 pt-20 lg:p-0 lg:pt-0 flex flex-col lg:flex-row lg:bg-transparent gap-x-4">
           {navItems.map(({ href, title }) => (
             <Link key={href} href={href} title={title}>
               <span onClick={() => isOpen && setIsOpen(false)}>{title}</span>
