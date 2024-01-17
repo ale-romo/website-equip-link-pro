@@ -8,7 +8,7 @@ import HexDiv from '@/components/HexDiv';
 
 const steps = [
   'Browse the catalog and find what you need',
-  'Fill in the form to inquire about your piece',
+  'Fill in the form to inquire about your thing',
   "We'll contact you to iron out the details",
   'Your Item will be delivered to you'
 ]
