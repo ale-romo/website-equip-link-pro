@@ -93,7 +93,7 @@ export default function Home() {
       <section className="flex bg-blue-900 text-white">
         <div className="w-1/2">
           <h2>About Us</h2>
-          <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          <p>Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
           <ul>
             <li>
               Lorem Ipsum has been the industry's .
@@ -113,11 +113,12 @@ export default function Home() {
         </div>
 
       </section>
-      <section>
+      <section className="max-w-screen-md mx-auto py-20">
         <h2>Contact Us</h2>
-        <ul>
+        <ul className="flex flex-col gap-10 md:flex-row justify-around max-w-screen-xl">
           <li>
             <h3>Santa Mónica</h3>
+            <hr className="w-10 bg-blue-800 h-0.5 border-none"/>
             <p>Address</p>
             <p>Phone</p>
           </li>
@@ -128,6 +129,9 @@ export default function Home() {
           </li>
         </ul>
       </section>
+      <footer className="max-w-screen-lg mx-auto w-full">
+        <p className="border-t-2 border-blue-800 w-full my-10 py-3">© 2024 Equip Link Pro. All rights reserved.</p>
+      </footer>
     </main>
   )
 }
