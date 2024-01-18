@@ -68,25 +68,29 @@ const reviews = [
 ]
 
 export default function Home() {
-  const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth);
+  const [screenWidth, setScreenWidth] = useState<number>(0);
 
   useEffect(() => {
-    const handleResize = () => {
+    const updateScreenWidth = () => {
       setScreenWidth(window.innerWidth);
     };
 
-    // Attach event listener for window resize
-    window.addEventListener('resize', handleResize);
+    // Set initial screen width
+    updateScreenWidth();
 
-    // Clean up the event listener on component unmount
+    // Attach event listener for screen width changes
+    window.addEventListener('resize', updateScreenWidth);
+
+    // Remove event listener when component unmounts
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('resize', updateScreenWidth);
     };
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between pt-24">
+    <>
       <Orders />
+
       <section className="w-full" id="howItWorks">
         <h2 className="mb-10">How it works</h2>
         <div className="flex bg-zinc-200 w-full justify-center text-white">
@@ -102,6 +106,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <section className="w-full flex max-w-screen-sm mx-auto flex-col py-20 px-10 lg:px-0" id="faq">
         <h2>FAQ</h2>
         <div>
@@ -109,9 +114,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About us */}
-      <section className="w-full bg-blue-900 text-white mb-20" style={{ backgroundImage: 'url(/images/hero-bg.webp' }} id="aboutUs">
-        <div className="w-full px-10 py-12 lg:py-20 bg-blue-900/80 flex justify-center">
+      <section className="w-full bg-blue-800 text-white mb-20" style={{ backgroundImage: 'url(/images/hero-bg.webp' }} id="aboutUs">
+        <div className="w-full px-10 py-12 lg:py-20 bg-blue-800/80 flex justify-center">
           <div className="flex flex-col lg:flex-row w-full max-w-screen-xl">
             <div className="w-full lg:w-1/2 mb-10 px-8 lg:mb-0">
               <h2>About Us</h2>
@@ -128,7 +132,7 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-            <div className="w-full lg:w-1/2 lg:px-8">
+            <div className="w-full lg:w-1/2 px-10">
               <Carousel>
                 {reviews.map((review, i) => <ReviewCard key={i} {...review} />)}
               </Carousel>
@@ -136,6 +140,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <section className="max-w-screen-md mx-auto mb-20" id="contactUs">
         <h2>Contact Us</h2>
         <ul className="flex flex-col gap-10 md:flex-row justify-around max-w-screen-xl">
@@ -152,9 +157,10 @@ export default function Home() {
           </li>
         </ul>
       </section>
+
       <footer className="max-w-screen-lg mx-auto w-full px-4 lg:px-0">
         <p className="border-t-2 border-blue-800 w-full py-3">© 2024 Equip Link Pro. All rights reserved.</p>
       </footer>
-    </main>
+    </>
   )
 }

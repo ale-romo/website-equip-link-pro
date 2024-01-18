@@ -12,6 +12,10 @@
     font-family: "Teko", 'sans-serif';
     @apply text-zinc-700;
   }
+  h1 {
+    @apply text-5xl;
+    @apply text-center;
+  }
   h2 {
     @apply text-3xl;
     @apply text-center;

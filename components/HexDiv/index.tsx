@@ -35,7 +35,7 @@ const HexDiv = ({ children, direction = 'right' }: Props) => {
 
   return (
     <div
-      className={`bg-gradient-to-br from-blue-300 to-blue-500 ${getClasses(direction)}`}
+      className={`bg-gradient-to-br from-blue-600 to-blue-800 ${getClasses(direction)}`}
       style={{ clipPath: generateClipPath() }}
     >
       {children}

@@ -43,7 +43,7 @@ const Navbar = ({ navItems }: Props) => {
     };
   }, [isOpen]);
 
-  return <div className="flex p-4 justify-between items-center fixed w-full bg-white z-20">
+  return <div className="flex p-2 justify-between items-center fixed top-0 w-full bg-white z-20">
     <Link href="/" title="Equip Link Pro" className="flex items-center gap-4 text-2xl font-bold z-20">
       <span onClick={() => isOpen && setIsOpen(false)} className="flex items-center gap-4">
         <Image src="/images/logo.svg" alt="Equip Link Pro" height="32" width="30" className="h-auto w-10" />
