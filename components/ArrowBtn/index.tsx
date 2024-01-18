@@ -21,11 +21,11 @@ const ArrowBtn = ({ direction, color = 'black', cb = ()=> null }: Props) => {
   };
 
   return (
-    <button className={`w-8 h-10 flex items-center justify-center ${getRotation(direction)}`} onClick={() => cb()}>
+    <div className={`w-8 h-10 flex items-center justify-center ${getRotation(direction)}`} onClick={() => cb()}  role="button">
       <svg xmlns="http://www.w3.org/2000/svg" width="5" height="14" viewBox="0 0 4 14">
         <path d="M0 0 L4 7 L0 14" fill="none" stroke={color} strokeWidth="1" />
       </svg>
-    </button>
+    </div>
   );
 };
 

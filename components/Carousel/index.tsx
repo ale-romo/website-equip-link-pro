@@ -59,12 +59,12 @@ const Carousel = ({ children }: Props) => {
         </div>
       </div>
       {isLeftArrowVisible && (
-        <div className="absolute top-1/2 -left-8 -translate-y-1/2 justify-between">
+        <div className="absolute top-1/2 -left-10 -translate-y-1/2 justify-between">
           <ArrowBtn direction="left" color="white" cb={() => changeSlide(-1)} />
         </div>
       )}
       {isRightArrowVisible && (
-        <div className="absolute top-1/2 -right-8 -translate-y-1/2 justify-between">
+        <div className="absolute top-1/2 -right-10 -translate-y-1/2 justify-between">
           <ArrowBtn direction="right" color="white" cb={() => changeSlide(1)} />
         </div>
       )}

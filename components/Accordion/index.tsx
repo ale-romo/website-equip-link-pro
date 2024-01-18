@@ -24,7 +24,7 @@ const AccordionItem = ({ content, isOpen }: ItemProps) => {
       className={`transition-all duration-300 ease-in-out overflow-hidden`}
       style={{ height: isOpen ? contentHeight?.current?.scrollHeight : 0 }}
     >
-      {content}
+      <p className="mb-8">{content}</p>
     </div>
   );
 };
@@ -36,14 +36,11 @@ const Accordion = ({ items }: Props) => {
     <>
       {items.map(({ title, content }, i) => {
         return (
-        <div key={i}>
+        <div key={i} className="border-b-blue-800 border-b-2 first:border-t-blue-800 first:border-t-2">
           <button onClick={() => setIsOpen(isOpen !== i ? i : null)} className="w-full flex justify-between items-center">
             <h3>{title}</h3><ArrowBtn direction={isOpen === i ? 'up' : 'down'} />
           </button>
           <AccordionItem content={content} isOpen={isOpen === i}/>
-          {/* <div className={`transition-all duration-300 ease-in-out ${isOpen === i ? 'h-40' : 'h-0'} overflow-hidden`}>
-            {content}
-          </div> */}
         </div>
       )})}
     </>

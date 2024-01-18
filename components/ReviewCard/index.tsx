@@ -12,7 +12,9 @@ interface Props {
 
 const ReviewCard = ({ img, author, company, quote, rating }: Props) => (
   <div>
-    <Image src={img} width="250" height="150" className="w-full h-auto" alt="" />
+    <div className="overflow-hidden rounded-3xl mb-5">
+      <Image src={img} width="250" height="150" className="w-full h-auto" alt="" />
+    </div>
     <p className="text-xl text-center">&ldquo;{quote}&rdquo;</p>
     <hr className="my-2" />
     <div className="flex justify-between">
