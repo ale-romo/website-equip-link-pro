@@ -56,7 +56,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${headingFont.variable} ${contentFont.variable} font-content`}>
         <Navbar navItems={navItems}/>
-        <main className="flex min-h-screen flex-col items-center justify-between pt-20">
+        <main className="flex min-h-screen flex-col items-center justify-between pt-18">
           {children}
         </main>
       </body>
