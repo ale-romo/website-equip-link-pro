@@ -11,11 +11,14 @@ const Carousel = ({ children }: Props) => {
   const [isRightArrowVisible, setIsRightArrowVisible] = useState(true);
 
   useEffect(() => {
+    let ref: any;
     const handleScroll = () => {
+
       if (carouselRef.current) {
-        const scrollLeft = carouselRef.current.scrollLeft;
-        const scrollWidth = carouselRef.current.scrollWidth;
-        const clientWidth = carouselRef.current.clientWidth;
+        ref = carouselRef.current;
+        const scrollLeft = ref.scrollLeft;
+        const scrollWidth = ref.scrollWidth;
+        const clientWidth = ref.clientWidth;
 
         const isLeftVisible = scrollLeft > 0;
         const isRightVisible = scrollLeft + clientWidth < scrollWidth;
@@ -25,13 +28,13 @@ const Carousel = ({ children }: Props) => {
       }
     };
 
-    if (carouselRef.current) {
-      carouselRef.current.addEventListener("scroll", handleScroll);
+    if (ref) {
+      ref.addEventListener("scroll", handleScroll);
     }
 
     return () => {
-      if (carouselRef.current) {
-        carouselRef.current.removeEventListener("scroll", handleScroll);
+      if (ref) {
+        ref.removeEventListener("scroll", handleScroll);
       }
     };
   }, []);

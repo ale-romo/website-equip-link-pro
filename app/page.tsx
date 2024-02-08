@@ -8,10 +8,10 @@ import HexDiv from '@/components/HexDiv';
 import { useEffect, useState } from 'react';
 
 const steps = [
-  'Browse the catalog and find what you need',
-  'Fill in the form to inquire about your thing',
+  'Find your equipment in our catalog',
+  'Fill in the form to place a request',
   "We'll contact you to iron out the details",
-  'Your Item will be delivered to you'
+  'Your equipment is delivered'
 ]
 
 const faq = [
@@ -91,52 +91,52 @@ export default function Home() {
     <>
       <Orders />
 
-      <section className="w-full" id="howItWorks">
-        <h2 className="mb-10">How it works</h2>
-        <div className="flex bg-zinc-200 w-full justify-center text-white">
-          <div className="w-3/4 flex flex-col lg:flex-row items-stretch -my-3 lg:my-0">
+      <section className="w-full mb-20" id="howItWorks">
+        <h2>4 steps to quality and savings</h2>
+        <div className="flex primary-gradient w-full justify-center">
+          <div className="w-3/4 flex flex-col lg:flex-row items-stretch -my-3 lg:my-0 -mb-10 lg:mb-0">
             {steps && steps.map((step, i) => (
-              <HexDiv key={i} direction={screenWidth > 1024 ? 'right' : 'down'}>
-                <div className="relative flex flex-col lg:flex-row items-center h-full py-12  px-8 ">
-                  <h3 className="opacity-30 text-5xl lg:absolute top-2 left-4">{i + 1}</h3>
-                  <p className="text-center text-3xl">{step}</p>
-                </div>
-              </HexDiv>
+              <div key={i} className="w-full lg:w-1/4">
+                <HexDiv direction={screenWidth > 1024 ? 'right' : 'down'}>
+                  <div className="relative flex flex-col lg:flex-row items-center h-full py-10 px-5">
+                    <p className="text-center text-xl font-medium text-blue-950">{step}</p>
+                  </div>
+                </HexDiv>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="w-full flex max-w-screen-sm mx-auto flex-col py-20 px-10 lg:px-0" id="faq">
+      <section className="w-full flex max-w-screen-sm mx-auto flex-col mb-20 px-10 lg:px-0" id="faq">
         <h2>FAQ</h2>
         <div>
           <Accordion items={faq} />
         </div>
       </section>
 
-      <section className="w-full bg-blue-800 text-white mb-20" style={{ backgroundImage: 'url(/images/hero-bg.webp' }} id="aboutUs">
-        <div className="w-full px-10 py-12 lg:py-20 bg-blue-800/80 flex justify-center">
-          <div className="flex flex-col lg:flex-row w-full max-w-screen-xl">
-            <div className="w-full lg:w-1/2 mb-10 px-8 lg:mb-0">
-              <h2>About Us</h2>
-              <p>Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-              <ul>
-                <li>
-                  Lorem Ipsum has been the industry&apos;s .
-                </li>
-                <li>
-                  Lorem Ipsum has been the industry&apos;s .
-                </li>
-                <li>
-                  Lorem Ipsum has been the industry&apos;s .
-                </li>
-              </ul>
-            </div>
-            <div className="w-full lg:w-1/2 px-10">
-              <Carousel>
-                {reviews.map((review, i) => <ReviewCard key={i} {...review} />)}
-              </Carousel>
-            </div>
+      <section className="w-full text-white mb-20 px-10 py-12 lg:py-20 flex justify-center relative" style={{ backgroundImage: 'url(/images/hero-bg.webp' }} id="aboutUs">
+        <div className="w-full h-full absolute left-0 top-0 opacity-80  primary-gradient"></div>
+        <div className="flex flex-col lg:flex-row w-full max-w-screen-xl z-10">
+          <div className="w-full lg:w-1/2 mb-10 px-8 lg:mb-0">
+            <h2 className="text-gold-600">About Us</h2>
+            <p className="mb-5">Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <ul className="flex flex-col gap-2 list-disc list-inside">
+              <li>
+                Lorem Ipsum has been the industry&apos;s .
+              </li>
+              <li>
+                Lorem Ipsum has been the industry&apos;s .
+              </li>
+              <li>
+                Lorem Ipsum has been the industry&apos;s .
+              </li>
+            </ul>
+          </div>
+          <div className="w-full lg:w-1/2 px-10">
+            <Carousel>
+              {reviews.map((review, i) => <ReviewCard key={i} {...review} />)}
+            </Carousel>
           </div>
         </div>
       </section>
@@ -144,22 +144,25 @@ export default function Home() {
       <section className="max-w-screen-md mx-auto mb-20" id="contactUs">
         <h2>Contact Us</h2>
         <ul className="flex flex-col gap-10 md:flex-row justify-around max-w-screen-xl">
-          <li>
-            <h3>Santa Mónica</h3>
-            <hr className="w-10 bg-blue-800 h-0.5 border-none"/>
-            <p>Address</p>
-            <p>Phone</p>
-          </li>
-          <li>
+          <li className="flex flex-col gap-3">
             <h3>Tijuana</h3>
-            <p>Address</p>
-            <p>Phone</p>
+            <hr className="w-10 bg-gold-400 h-0.5 border-none"/>
+            <p>1904 11th St, Santa Monica, CA 90404</p>
+            <p><a className="hover:underline font-medium text-blue-950" href="tel:(619) 221-4343">(619) 221-4343</a></p>
+            <p><a className="hover:underline font-medium text-blue-950" href="mailto:dmartinez@equiplinkpro.com">dmartinez@equiplinkpro.com</a></p>
+          </li>
+          <li className="flex flex-col gap-3">
+            <h3>Tijuana</h3>
+            <hr className="w-10 bg-gold-400 h-0.5 border-none"/>
+            <p>1904 11th St, Santa Monica, CA 90404</p>
+            <p><a className="hover:underline font-medium text-blue-950" href="tel:(619) 221-4343">(619) 221-4343</a></p>
+            <p><a className="hover:underline font-medium text-blue-950" href="mailto:dmartinez@equiplinkpro.com">dmartinez@equiplinkpro.com</a></p>
           </li>
         </ul>
       </section>
 
       <footer className="max-w-screen-lg mx-auto w-full px-4 lg:px-0">
-        <p className="border-t-2 border-blue-800 w-full py-3">© 2024 Equip Link Pro. All rights reserved.</p>
+        <p className="border-t-2 border-gold-600 w-full py-3">© 2024 Equip Link Pro. All rights reserved.</p>
       </footer>
     </>
   )

@@ -1,6 +1,21 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from '@/components/Navbar';
+import { Palanquin_Dark, Roboto } from '@next/font/google';
+
+const headingFont = Palanquin_Dark({
+  subsets: ['latin'],
+  weight: '700',
+  display: 'swap',
+  variable: '--font-heading',
+});
+const contentFont = Roboto({
+  weight: ['400', '500','700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-content',
+});
+
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -36,9 +51,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  console.log(headingFont)
   return (
     <html lang="en">
-      <body>
+      <body className={`${headingFont.variable} ${contentFont.variable} font-content`}>
         <Navbar navItems={navItems}/>
         <main className="flex min-h-screen flex-col items-center justify-between pt-20">
           {children}
