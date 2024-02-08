@@ -27,15 +27,15 @@ const HexDiv = ({ children, direction = 'right' }: Props) => {
         return 'py-7 -my-3';
       case 'left':
       case 'right':
-        return 'px-7 -mx-7';
+        return 'px-7 -mx-3';
       default:
-        return 'px-7 -mx-7';
+        return 'px-7 -mx-3';
     }
   }
 
   return (
     <div
-      className={`bg-gradient-to-br from-blue-300 to-blue-500 ${getClasses(direction)}`}
+      className={`secondary-gradient h-full ${getClasses(direction)}`}
       style={{ clipPath: generateClipPath() }}
     >
       {children}
