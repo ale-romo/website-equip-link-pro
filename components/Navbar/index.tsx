@@ -18,7 +18,7 @@ const Navbar = ({ navItems }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const body = document.querySelector('body');
+    const main = document.querySelector('main');
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape' && isOpen) {
@@ -27,13 +27,13 @@ const Navbar = ({ navItems }: Props) => {
     };
 
     if (isOpen) {
-      if (body) {
-        body.classList.add('h-screen', 'overflow-hidden');
+      if (main) {
+        main.classList.add('h-screen', 'overflow-hidden');
         document.addEventListener('keydown', handleKeyDown);
       }
     } else {
-      if (body) {
-        body.classList.remove('h-screen', 'overflow-hidden');
+      if (main) {
+        main.classList.remove('h-screen', 'overflow-hidden');
         document.removeEventListener('keydown', handleKeyDown);
       }
     }
@@ -43,7 +43,7 @@ const Navbar = ({ navItems }: Props) => {
     };
   }, [isOpen]);
 
-  return <div className="flex py-2 px-4 justify-between items-center fixed top-0 w-full bg-white z-20">
+  return <div className="flex py-2 px-4 justify-between items-center w-full bg-white z-20">
     <Link href="/" title="Equip Link Pro" className="flex items-center gap-4 text-2xl font-bold z-20">
       <span onClick={() => isOpen && setIsOpen(false)} className="flex items-center gap-4 font-heading font-bold">
         <Image src="/images/logo.svg" alt="Equip Link Pro" height="32" width="30" className="h-auto w-14" />

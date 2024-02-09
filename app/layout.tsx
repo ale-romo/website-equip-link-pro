@@ -51,12 +51,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  console.log(headingFont)
   return (
     <html lang="en">
-      <body className={`${headingFont.variable} ${contentFont.variable} font-content`}>
+      <body className={`${headingFont.variable} ${contentFont.variable} font-content h-screen flex flex-col overflow-hidden`}>
         <Navbar navItems={navItems}/>
-        <main className="flex min-h-screen flex-col items-center justify-between pt-18">
+        <main className="flex h-full flex-col items-center justify-between overflow-y-scroll w-screen overflow-x-hidden">
           {children}
         </main>
       </body>

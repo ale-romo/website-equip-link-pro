@@ -1,8 +1,8 @@
 import Input from '../Atoms/Input';
 
 const Orders = () => {
-  return <section className="flex flex-col md:flex-row align-center mb-20 w-full md:items-stretch md:overflow-hidden bg-auto primary-gradient">
-    <div className="md:w-1/2 p-20  bg-cover flex flex-col align-center gap-10 text-white justify-center items-center">
+  return <section className="flex flex-col md:flex-row align-center mb-20 w-full md:items-stretch primary-gradient">
+    <div className="md:w-1/2 p-20 h-auto bg-cover flex flex-col align-center gap-10 text-white justify-center items-center">
       <h1 className="text-gold-600">Unlock Innovation with Equip Link Pro</h1>
       <p className="text-center">
       Discover a world of cutting-edge equipment solutions at your fingertips. Our catalog is a gateway to efficiency, performance, and unparalleled innovation.
