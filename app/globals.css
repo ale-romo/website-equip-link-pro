@@ -18,7 +18,6 @@
     @apply text-center;
     @apply font-heading;
     @apply pb-14;
-    @apply uppercase;
   }
 
   h3 {
@@ -28,13 +27,13 @@
 }
 
 .primary-gradient {
-  @apply bg-gradient-to-r;
-  @apply from-blue-950;
-  @apply to-slate-700;
+  @apply bg-gradient-to-br;
+  @apply from-blue-900;
+  @apply to-blue-700;
 }
 
 .secondary-gradient {
   @apply bg-gradient-to-br;
-  @apply from-gold-400;
-  @apply to-gold-800;
+  @apply from-amber-300;
+  @apply to-amber-400;
 }

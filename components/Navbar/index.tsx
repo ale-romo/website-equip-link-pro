@@ -52,7 +52,7 @@ const Navbar = ({ navItems }: Props) => {
     </Link>
     <div className="flex gap-4 h-full">
       <nav className={`${isOpen ? 'h-full' : 'h-0 lg:h-full'} w-full bg-white fixed top-0 left-0  z-10 overflow-hidden transition-all duration-300  lg:relative lg:z-0`}>
-        <div className="p-10 pt-20 lg:p-0 lg:pt-0 flex flex-col lg:flex-row lg:bg-transparent gap-x-4 font-bold text-blue-900">
+        <div className="p-10 pt-20 lg:p-0 lg:pt-0 flex flex-col lg:flex-row lg:bg-transparent gap-x-4 font-bold text-blue-800">
           {navItems.map(({ href, title }) => (
             <Link key={href} href={href} title={title}>
               <span onClick={() => isOpen && setIsOpen(false)}>{title}</span>

@@ -35,7 +35,7 @@ const HexDiv = ({ children, direction = 'right' }: Props) => {
 
   return (
     <div
-      className={`secondary-gradient h-full ${getClasses(direction)}`}
+      className={`primary-gradient h-full ${getClasses(direction)}`}
       style={{ clipPath: generateClipPath() }}
     >
       {children}

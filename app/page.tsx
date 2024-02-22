@@ -7,33 +7,37 @@ import ReviewCard from '@/components/ReviewCard';
 import HexDiv from '@/components/HexDiv';
 import { useEffect, useState } from 'react';
 
-const steps = [
-  'Find your equipment in our catalog',
-  'Fill in the form to place a request',
-  "We'll contact you to iron out the details",
-  'Your equipment is delivered'
+const workings = [
+  {
+    title: 'Explore las listas mensuales',
+    content: 'Reciba nuestras listas mensuales de equipos con una variedad de equipo y maquinaria de construcción semi nueva.'
+  },
+  {
+    title: 'Información detallada',
+    content: 'Acceda a detalles completos, incluyendo horas registradas y precios competitivos, para tomar decisiones informadas.'
+  },
+  {
+    title: 'Adquisición sin problemas',
+    content: 'Simplifique su proceso de adquisición de equipos al conectarse directamente con nosotros. Nosotros nos encargamos de la logística, para que pueda centrarse en lo que hace mejor: construir el éxito.'
+  },
 ]
 
-const faq = [
+const values = [
   {
-    title: 'Sed ut perspiciatis unde omnis iste natus error sit?',
-    content: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. '
+    title: 'Transparencia',
+    content: 'Creemos en la divulgación completa. Cada equipo en nuestras listas viene con información detallada sobre su historial de uso, garantizando una transparencia total en su proceso de toma de decisiones.'
   },
   {
-    title: 'Sed ut perspiciatis unde omnis iste natus error sit?',
-    content: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. '
+    title: 'Garantía de Calidad',
+    content: 'Nos enorgullece proporcionar equipos de primera calidad y bien mantenidos. Nuestros rigurosos procesos de inspección garantizan que reciba maquinaria confiable que cumple con los más altos estándares de la industria.'
   },
   {
-    title: 'Sed ut perspiciatis unde omnis iste natus error sit?',
-    content: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. '
+    title: 'Precios Competitivos',
+    content: 'Su presupuesto es importante. Nuestro compromiso con precios justos y competitivos asegura que no solo obtenga equipos de calidad, sino que también disfrute de soluciones rentables que contribuyan a la rentabilidad de su proyecto.'
   },
   {
-    title: 'Sed ut perspiciatis unde omnis iste natus error sit?',
-    content: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. '
-  },
-  {
-    title: 'Sed ut perspiciatis unde omnis iste natus error sit?',
-    content: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. '
+    title: 'Ahorro de Tiempo',
+    content: 'Entendemos la urgencia en la industria de la construcción. Con nuestras listas mensuales, puede identificar rápidamente el equipo que necesita sin la molestia de búsquedas extensas, ahorrándole tiempo valioso en el proceso de adquisición.'
   },
 ]
 const reviews = [
@@ -91,15 +95,16 @@ export default function Home() {
     <>
       <Orders />
 
-      <section className="w-full mb-20" id="howItWorks">
-        <h2>4 steps to quality and savings</h2>
-        <div className="flex primary-gradient w-full justify-center">
+      <section className="w-full mb-20" id="whyChoose">
+        <h2>¿Cómo funciona EquipLinkPro?</h2>
+        <div className="flex bg-slate-300 w-full justify-center">
           <div className="w-3/4 flex flex-col lg:flex-row items-stretch -my-3 lg:my-0 -mb-10 lg:mb-0">
-            {steps && steps.map((step, i) => (
-              <div key={i} className="w-full lg:w-1/4">
+            {workings && workings.map((item, i) => (
+              <div key={i} className="w-full lg:w-1/3">
                 <HexDiv direction={screenWidth > 1024 ? 'right' : 'down'}>
-                  <div className="relative flex flex-col lg:flex-row items-center h-full py-10 px-5">
-                    <p className="text-center text-xl font-medium text-blue-950">{step}</p>
+                  <div className="relative flex flex-col items-center gap-5 justify-center h-full py-5 px-10">
+                    <h3 className="text-2xl font-heading text-amber-400">{item.title}</h3>
+                    <p className="text-sm text-white">{item.content}</p>
                   </div>
                 </HexDiv>
               </div>
@@ -109,9 +114,9 @@ export default function Home() {
       </section>
 
       <section className="w-full flex max-w-screen-sm mx-auto flex-col mb-20 px-10 lg:px-0" id="faq">
-        <h2>FAQ</h2>
+        <h2>¿Por qué elegir EquipLinkPro?</h2>
         <div>
-          <Accordion items={faq} />
+          <Accordion items={values} />
         </div>
       </section>
 
@@ -119,19 +124,9 @@ export default function Home() {
         <div className="w-full h-full absolute left-0 top-0 opacity-80  primary-gradient"></div>
         <div className="flex flex-col lg:flex-row w-full max-w-screen-xl z-10">
           <div className="w-full lg:w-1/2 mb-10 px-8 lg:mb-0">
-            <h2 className="text-gold-600">About Us</h2>
-            <p className="mb-5">Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-            <ul className="flex flex-col gap-2 list-disc list-inside">
-              <li>
-                Lorem Ipsum has been the industry&apos;s .
-              </li>
-              <li>
-                Lorem Ipsum has been the industry&apos;s .
-              </li>
-              <li>
-                Lorem Ipsum has been the industry&apos;s .
-              </li>
-            </ul>
+            <h2 className="text-amber-300">Acerca de EquipLinkPro</h2>
+            <p className="mb-5">Una solución innovadora que transformará la forma en que adquiere equipos de construcción</p>
+            <p className="mb-5">En <b>EquipLinkPro</b>, comprendemos el papel fundamental que desempeñan los equipos en el éxito de sus proyectos. Por eso, hemos desarrollado un enfoque revolucionario para la intermediación de equipos. Nuestras listas mensuales de equipos cuentan con una selección cuidadosa de maquinaria funcional y bien mantenida, cada una con las horas de uso registradas meticulosamente.</p>
           </div>
           <div className="w-full lg:w-1/2 px-10">
             <Carousel>
@@ -141,28 +136,31 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="max-w-screen-md mx-auto mb-20" id="contactUs">
-        <h2>Contact Us</h2>
-        <ul className="flex flex-col gap-10 md:flex-row justify-around max-w-screen-xl">
+      <section className="max-w-screen-md mx-auto mb-20 flex flex-col w-full items-center" id="contactUs">
+        <h2 className="text-amber-400">Contáctanos</h2>
+        <p className="mb-6 text-xl text-center">¿Listo para experimentar una nueva era en la adquisición de equipos de construcción?</p>
+        <p className="mb-20 text-xl text-center">Comuníquese con nosotros hoy mismo para discutir cómo EquipLinkPro puede ser su socio de confianza en el éxito de su empresa.</p>
+        <ul className="flex flex-col gap-10 md:flex-row justify-around mb-20">
           <li className="flex flex-col gap-3">
-            <h3>Tijuana</h3>
-            <hr className="w-10 bg-gold-400 h-0.5 border-none"/>
+            <h3>Santa Mónica</h3>
+            <hr className="w-10 bg-amber-300 h-0.5 border-none"/>
             <p>1904 11th St, Santa Monica, CA 90404</p>
-            <p><a className="hover:underline font-medium text-blue-950" href="tel:(619) 221-4343">(619) 221-4343</a></p>
-            <p><a className="hover:underline font-medium text-blue-950" href="mailto:dmartinez@equiplinkpro.com">dmartinez@equiplinkpro.com</a></p>
+            <p><a className="hover:underline font-medium text-blue-800" href="tel:(619) 221-4343">+1(310)720-3279</a></p>
+            <p><a className="hover:underline font-medium text-blue-800" href="mailto:dmartinez@equiplinkpro.com">dmartinez@equiplinkpro.com</a></p>
           </li>
           <li className="flex flex-col gap-3">
             <h3>Tijuana</h3>
-            <hr className="w-10 bg-gold-400 h-0.5 border-none"/>
+            <hr className="w-10 bg-amber-300 h-0.5 border-none"/>
             <p>1904 11th St, Santa Monica, CA 90404</p>
-            <p><a className="hover:underline font-medium text-blue-950" href="tel:(619) 221-4343">(619) 221-4343</a></p>
-            <p><a className="hover:underline font-medium text-blue-950" href="mailto:dmartinez@equiplinkpro.com">dmartinez@equiplinkpro.com</a></p>
+            <p><a className="hover:underline font-medium text-blue-800" href="tel:(619) 221-4343">+1(310)720-3279</a></p>
+            <p><a className="hover:underline font-medium text-blue-800" href="mailto:dmartinez@equiplinkpro.com">dmartinez@equiplinkpro.com</a></p>
           </li>
         </ul>
+        <p className="text-xl text-center w-2/3">Gracias por considerar a <b>EquipLinkPro.</b> Esperamos con interés la oportunidad de apoyar sus esfuerzos en la construcción. Quedamos a sus ordenes para cualquier duda o aclaración.</p>
       </section>
 
       <footer className="max-w-screen-lg mx-auto w-full px-4 lg:px-0">
-        <p className="border-t-2 border-gold-600 w-full py-3">© 2024 Equip Link Pro. All rights reserved.</p>
+        <p className="border-t-2 border-amber-400 w-full py-3">© 2024 Equip Link Pro. All rights reserved.</p>
       </footer>
     </>
   )
