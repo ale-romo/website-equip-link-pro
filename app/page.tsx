@@ -6,6 +6,7 @@ import Carousel from '@/components/Carousel';
 import ReviewCard from '@/components/ReviewCard';
 import HexDiv from '@/components/HexDiv';
 import { useEffect, useState } from 'react';
+import Banner from '@/components/Banner';
 
 const workings = [
   {
@@ -94,7 +95,9 @@ export default function Home() {
   return (
     <>
       <Orders />
-
+      <Banner>
+        <p className="text-white text-xl text-center">También puedes escribirnos a <a className="hover:underline text-amber-400" href="mailto:dmartinez@equiplinkpro.com" target="_blank">dmartinez@equiplinkpro.com</a><br className="md:hidden" /> o en Whatsapp a<br className="md:hidden" /> <a className="hover:underline text-amber-400" href="https://wa.me/13107203279" target="_blank">+1(310)720-3279</a></p>
+      </Banner>
       <section className="w-full mb-20" id="proceso">
         <h2>¿Cómo funciona EquipLinkPro?</h2>
         <div className="flex bg-slate-300 w-full justify-center">
@@ -102,7 +105,7 @@ export default function Home() {
             {workings && workings.map((item, i) => (
               <div key={i} className="w-full lg:w-1/3">
                 <HexDiv direction={screenWidth > 1024 ? 'right' : 'down'}>
-                  <div className="relative flex flex-col items-center gap-5 justify-center h-full py-5 px-10">
+                  <div className="relative flex flex-col items-center gap-5 justify-start h-full py-5 px-10">
                     <h3 className="text-2xl font-heading text-amber-400">{item.title}</h3>
                     <p className="text-sm text-white">{item.content}</p>
                   </div>

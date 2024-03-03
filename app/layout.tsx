@@ -52,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <body className={`${headingFont.variable} ${contentFont.variable} font-content h-screen flex flex-col overflow-hidden`}>
         <Navbar navItems={navItems}/>
         <main className="flex h-full flex-col items-center justify-between overflow-y-scroll w-screen overflow-x-hidden">
