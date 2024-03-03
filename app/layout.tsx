@@ -5,7 +5,7 @@ import { Palanquin_Dark, Roboto } from '@next/font/google';
 
 const headingFont = Palanquin_Dark({
   subsets: ['latin'],
-  weight: '700',
+  weight: '400',
   display: 'swap',
   variable: '--font-heading',
 });
@@ -24,24 +24,24 @@ export const metadata: Metadata = {
 
 const navItems = [
     {
-      href: '#home',
-      title: 'Home',
+      href: '#catalogo',
+      title: 'Catálogo',
     },
     {
-      href: '#howItWorks',
-      title: 'How it works',
+      href: '#proceso',
+      title: 'Cómo Funciona ELP',
     },
     {
-      href: '#faq',
-      title: 'FAQ',
+      href: '#por-que',
+      title: 'Por qué elegir ELP',
     },
     {
-      href: '#AboutUs',
-      title: 'About Us',
+      href: '#nosotros',
+      title: 'Nosotros',
     },
     {
-      href: '#ContactUs',
-      title: 'Contact Us',
+      href: '#contacto',
+      title: 'Contáctanos',
     }
   ]
 
@@ -52,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body className={`${headingFont.variable} ${contentFont.variable} font-content h-screen flex flex-col overflow-hidden`}>
         <Navbar navItems={navItems}/>
         <main className="flex h-full flex-col items-center justify-between overflow-y-scroll w-screen overflow-x-hidden">

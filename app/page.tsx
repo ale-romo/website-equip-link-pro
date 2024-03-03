@@ -95,7 +95,7 @@ export default function Home() {
     <>
       <Orders />
 
-      <section className="w-full mb-20" id="whyChoose">
+      <section className="w-full mb-20" id="proceso">
         <h2>¿Cómo funciona EquipLinkPro?</h2>
         <div className="flex bg-slate-300 w-full justify-center">
           <div className="w-3/4 flex flex-col lg:flex-row items-stretch -my-3 lg:my-0 -mb-10 lg:mb-0">
@@ -113,14 +113,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full flex max-w-screen-sm mx-auto flex-col mb-20 px-10 lg:px-0" id="faq">
+      <section className="w-full flex max-w-screen-sm mx-auto flex-col mb-20 px-10 lg:px-0" id="por-que">
         <h2>¿Por qué elegir EquipLinkPro?</h2>
         <div>
           <Accordion items={values} />
         </div>
       </section>
 
-      <section className="w-full text-white mb-20 px-10 py-12 lg:py-20 flex justify-center relative" style={{ backgroundImage: 'url(/images/hero-bg.webp' }} id="aboutUs">
+      <section className="w-full text-white mb-20 px-10 py-12 lg:py-20 flex justify-center relative" style={{ backgroundImage: 'url(/images/hero-bg.webp' }} id="nosotros">
         <div className="w-full h-full absolute left-0 top-0 opacity-80  primary-gradient"></div>
         <div className="flex flex-col lg:flex-row w-full max-w-screen-xl z-10">
           <div className="w-full lg:w-1/2 mb-10 px-8 lg:mb-0">
@@ -136,7 +136,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="max-w-screen-md mx-auto mb-20 flex flex-col w-full items-center" id="contactUs">
+      <section className="max-w-screen-md mx-auto mb-20 flex flex-col w-full items-center" id="contacto">
         <h2 className="text-amber-400">Contáctanos</h2>
         <p className="mb-6 text-xl text-center">¿Listo para experimentar una nueva era en la adquisición de equipos de construcción?</p>
         <p className="mb-20 text-xl text-center">Comuníquese con nosotros hoy mismo para discutir cómo EquipLinkPro puede ser su socio de confianza en el éxito de su empresa.</p>
