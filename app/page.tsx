@@ -98,7 +98,7 @@ export default function Home() {
       <Banner>
         <p className="text-white text-xl text-center">También puedes escribirnos a <a className="hover:underline text-amber-400" href="mailto:dmartinez@equiplinkpro.com" target="_blank">dmartinez@equiplinkpro.com</a><br className="md:hidden" /> o en Whatsapp a<br className="md:hidden" /> <a className="hover:underline text-amber-400" href="https://wa.me/13107203279" target="_blank">+1(310)720-3279</a></p>
       </Banner>
-      <section className="w-full mb-20" id="proceso">
+      <section className="w-full pt-20" id="proceso">
         <h2>¿Cómo funciona EquipLinkPro?</h2>
         <div className="flex bg-slate-300 w-full justify-center">
           <div className="w-3/4 flex flex-col lg:flex-row items-stretch -my-3 lg:my-0 -mb-10 lg:mb-0">
@@ -116,7 +116,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full flex max-w-screen-sm mx-auto flex-col mb-20 px-10 lg:px-0" id="por-que">
+      <section className="w-full flex max-w-screen-sm mx-auto flex-col py-20 px-10 lg:px-0" id="por-que">
         <h2>¿Por qué elegir EquipLinkPro?</h2>
         <div>
           <Accordion items={values} />
@@ -139,7 +139,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="max-w-screen-md mx-auto mb-20 flex flex-col w-full items-center" id="contacto">
+      <section className="max-w-screen-md mx-auto flex flex-col w-full items-center pt-20" id="contacto">
         <h2 className="text-amber-400">Contáctanos</h2>
         <p className="mb-6 text-xl text-center">¿Listo para experimentar una nueva era en la adquisición de equipos de construcción?</p>
         <p className="mb-20 text-xl text-center">Comuníquese con nosotros hoy mismo para discutir cómo EquipLinkPro puede ser su socio de confianza en el éxito de su empresa.</p>
@@ -162,7 +162,7 @@ export default function Home() {
         <p className="text-xl text-center w-2/3">Gracias por considerar a <b>EquipLinkPro.</b> Esperamos con interés la oportunidad de apoyar sus esfuerzos en la construcción. Quedamos a sus ordenes para cualquier duda o aclaración.</p>
       </section>
 
-      <footer className="max-w-screen-lg mx-auto w-full px-4 lg:px-0">
+      <footer className="max-w-screen-lg mx-auto w-full px-4 lg:px-0 pt-20">
         <p className="border-t-2 border-amber-400 w-full py-3">© 2024 Equip Link Pro. All rights reserved.</p>
       </footer>
     </>

@@ -1,5 +1,5 @@
 import Input from '../Atoms/Input';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useFormspark } from '@formspark/use-formspark';
 import Banner from '../Banner';
 
@@ -56,14 +56,15 @@ const Orders = () => {
         className="flex flex-row flex-wrap gap-2 md:skew-x-6 lg:skew-x-12 justify-center md:justify-end"
       >
         <h2 className="text-blue-800 pb-6 w-full text-left">Solicita tu cotización</h2>
-        <Input id="name" placeholder="Nombre" onChange={handleChange} required/>
-        <Input id="company" placeholder="Compañía"  onChange={handleChange} required />
-        <Input type="tel" id="phone" placeholder="Teléfono"  onChange={handleChange} required />
-        <Input type="email" id="email" placeholder="Email"  onChange={handleChange} required />
-        <Input id="equipmentId" placeholder="ID del equipo"  onChange={handleChange} required />
-        <textarea id="message" name="message" placeholder="Mensaje" rows={4}  onChange={handleChange} required className="py-2 px-4 w-full bg-white/70 placeholder:italic"></textarea>
-        {messageSent ?<p className="w-full text-center font-bold text-amber-400 bg-blue-800 rounded-lg p-4">Tu mensaje se ha enviado, pronto estaremos en contacto</p>:
-        <button type="submit" disabled={submitting} className="bg-blue-800 text-amber-400 px-6 py-2 rounded-full text-xl font-medium mt-2  lg:hover:bg-blue-700 disabled:opacity-75">Enviar</button>}
+        <Input value={formData.name} id="name" placeholder="Nombre" onChange={handleChange} required/>
+        <Input value={formData.company} id="company" placeholder="Compañía"  onChange={handleChange} required />
+        <Input value={formData.phone} type="tel" id="phone" placeholder="Teléfono"  onChange={handleChange} required />
+        <Input value={formData.email}type="email" id="email" placeholder="Email"  onChange={handleChange} required />
+        <Input value={formData.equipmentId} id="equipmentId" placeholder="ID del equipo"  onChange={handleChange} required />
+        <textarea value={formData.message} id="message" name="message" placeholder="Mensaje" rows={4}  onChange={handleChange} required className="py-2 px-4 w-full bg-white/70 placeholder:italic"></textarea>
+        {messageSent && <p className="w-full text-center font-bold text-blue-800 bg-amber-200 rounded-lg p-1">Tu mensaje se ha enviado, pronto estaremos en contacto</p>}
+        <button type="submit" disabled={submitting} className="bg-blue-800 text-amber-400 px-6 py-2 rounded-full text-xl font-medium mt-2  lg:hover:bg-blue-700 disabled:opacity-75">Enviar</button>
+
       </form>
     </div>
     <div className="hidden md:flex w-5 bg-amber-200/70 -skew-x-6 lg:-skew-x-12"></div>

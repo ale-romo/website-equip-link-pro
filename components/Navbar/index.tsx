@@ -43,6 +43,11 @@ const Navbar = ({ navItems }: Props) => {
     };
   }, [isOpen]);
 
+  const scrollNavigate = (href: string) => {
+    const el = document.querySelector(href);
+    el?.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+  }
+
   return <div className="flex py-2 px-4 justify-between items-center w-full bg-white z-20">
     <Link href="/" title="Equip Link Pro" className="flex items-center gap-4 text-2xl font-bold z-20">
       <span onClick={() => isOpen && setIsOpen(false)} className="flex items-center gap-4 font-heading font-bold">
@@ -54,9 +59,9 @@ const Navbar = ({ navItems }: Props) => {
       <nav className={`${isOpen ? 'h-full' : 'h-0 lg:h-full'} w-full bg-white fixed top-0 left-0  z-10 overflow-hidden transition-all duration-300  lg:relative lg:z-0`}>
         <div className="p-10 pt-28 lg:p-0 lg:pt-0 flex flex-col lg:flex-row lg:bg-transparent gap-4 font-bold text-blue-800 items-center lg:h-full">
           {navItems.map(({ href, title }) => (
-            <Link key={href} href={href} title={title}>
+            <button key={href} onClick={() => scrollNavigate(href)} title={title}>
               <span onClick={() => isOpen && setIsOpen(false)}>{title}</span>
-            </Link>
+            </button>
           ))}
         </div>
       </nav>
