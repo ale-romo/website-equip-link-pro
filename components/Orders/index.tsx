@@ -1,7 +1,6 @@
 import Input from '../Atoms/Input';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useFormspark } from '@formspark/use-formspark';
-import Banner from '../Banner';
 
 const Orders = () => {
   const [submit, submitting] = useFormspark({
