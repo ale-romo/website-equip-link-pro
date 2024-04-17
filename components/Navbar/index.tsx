@@ -48,10 +48,10 @@ const Navbar = ({ navItems }: Props) => {
     el?.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
   }
 
-  return <div className="flex py-2 px-4 justify-between items-center w-full bg-white z-20">
-    <Link href="/" title="Equip Link Pro" className="flex items-center gap-4 text-2xl font-bold z-20">
+  return <div className="flex py-3 sm:py-4 px-4 justify-between items-center w-full bg-white z-20 border-b-2 border-amber-400">
+    <Link href="/" title="Equip Link Pro" className="flex items-center gap-2 text-xl sm:text-2xl font-bold z-20">
       <span onClick={() => isOpen && setIsOpen(false)} className="flex items-center gap-4 font-heading font-bold">
-        <Image src="/images/logo.svg" alt="Equip Link Pro" height="32" width="30" className="h-auto w-14" />
+        <Image src="/images/logo.svg" alt="Equip Link Pro" height="32" width="30" className="h-auto w-6 md:w-8" />
         Equip Link Pro
       </span>
     </Link>

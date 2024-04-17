@@ -9,12 +9,18 @@
   }
 
   h1 {
-    @apply text-4xl;
-    @apply text-center;
-    @apply font-heading;
+    @apply text-2xl text-center font-heading;
+  }
+  @media (min-width: theme('screens.md')) {
+    h1 {
+      @apply text-4xl;
+    }
+    h2 {
+      @apply text-4xl;
+    }
   }
   h2 {
-    @apply text-4xl;
+    @apply text-2xl;
     @apply text-center;
     @apply font-heading;
     @apply pb-14;

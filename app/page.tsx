@@ -44,32 +44,32 @@ const values = [
 const reviews = [
   {
     img: '/images/ratings/rating.webp',
-    author:'Ing. Jvulio Cardenas',
-    company: 'Casas Geo',
-    quote: 'Gracias al equipo de Equip Link Pro por hacer mis suenos realidad',
-    rating: 3,
-  },
-  {
-    img: '/images/ratings/rating.webp',
-    author:'Ing. Jvulio Cardenas',
+    author:'Ing. Julio Cardenas',
     company: 'Casas Geo',
     quote: 'Gracias al equipo de Equip Link Pro por hacer mis suenos realidad',
     rating: 5,
   },
-  {
-    img: '/images/ratings/rating.webp',
-    author:'Ing. Jvulio Cardenas',
-    company: 'Casas Geo',
-    quote: 'Gracias al equipo de Equip Link Pro por hacer mis suenos realidad',
-    rating: 4,
-  },
-  {
-    img: '/images/ratings/rating.webp',
-    author:'Ing. Jvulio Cardenas',
-    company: 'Casas Geo',
-    quote: 'Gracias al equipo de Equip Link Pro por hacer mis suenos realidad',
-    rating: 3,
-  },
+  // {
+  //   img: '/images/ratings/rating.webp',
+  //   author:'Ing. Julio Cardenas',
+  //   company: 'Casas Geo',
+  //   quote: 'Gracias al equipo de Equip Link Pro por hacer mis suenos realidad',
+  //   rating: 5,
+  // },
+  // {
+  //   img: '/images/ratings/rating.webp',
+  //   author:'Ing. Julio Cardenas',
+  //   company: 'Casas Geo',
+  //   quote: 'Gracias al equipo de Equip Link Pro por hacer mis suenos realidad',
+  //   rating: 4,
+  // },
+  // {
+  //   img: '/images/ratings/rating.webp',
+  //   author:'Ing. Julio Cardenas',
+  //   company: 'Casas Geo',
+  //   quote: 'Gracias al equipo de Equip Link Pro por hacer mis suenos realidad',
+  //   rating: 3,
+  // },
 ]
 
 export default function Home() {
@@ -96,17 +96,17 @@ export default function Home() {
     <>
       <Orders />
       <Banner>
-        <p className="text-white text-xl text-center">También puedes escribirnos a <a className="hover:underline text-amber-400" href="mailto:dmartinez@equiplinkpro.com" target="_blank">dmartinez@equiplinkpro.com</a><br className="md:hidden" /> o en Whatsapp a<br className="md:hidden" /> <a className="hover:underline text-amber-400" href="https://wa.me/13107203279" target="_blank">+1(310)720-3279</a></p>
+        <p className="text-white text-base md:text-xl text-center">También puedes escribirnos a <a className="hover:underline text-amber-400" href="mailto:dmartinez@equiplinkpro.com" target="_blank">dmartinez@equiplinkpro.com</a><br className="md:hidden" /> o en Whatsapp a<br className="md:hidden" /> <a className="hover:underline text-amber-400" href="https://wa.me/13107203279" target="_blank">+1(310)720-3279</a></p>
       </Banner>
       <section className="w-full pt-20" id="proceso">
         <h2>¿Cómo funciona EquipLinkPro?</h2>
         <div className="flex bg-slate-300 w-full justify-center">
-          <div className="w-3/4 flex flex-col lg:flex-row items-stretch -my-3 lg:my-0 -mb-10 lg:mb-0">
+          <div className="w-4/5 flex flex-col lg:flex-row items-stretch -my-3 lg:my-0 -mb-10 lg:mb-0">
             {workings && workings.map((item, i) => (
               <div key={i} className="w-full lg:w-1/3">
                 <HexDiv direction={screenWidth > 1024 ? 'right' : 'down'}>
-                  <div className="relative flex flex-col items-center gap-5 justify-start h-full py-5 px-10">
-                    <h3 className="text-2xl font-heading text-amber-400">{item.title}</h3>
+                  <div className="relative flex flex-col items-center gap-5 justify-start h-full pt-5 pb-10 px-5 md:px-10 text-center lg:text-left">
+                    <h3 className="text-xl md:text-2xl font-heading text-amber-400">{item.title}</h3>
                     <p className="text-sm text-white">{item.content}</p>
                   </div>
                 </HexDiv>
@@ -116,22 +116,22 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full flex max-w-screen-sm mx-auto flex-col py-20 px-10 lg:px-0" id="por-que">
+      <section className="w-full flex max-w-screen-sm mx-auto flex-col py-20 px-5 md:px-10 lg:px-0" id="por-que">
         <h2>¿Por qué elegir EquipLinkPro?</h2>
         <div>
           <Accordion items={values} />
         </div>
       </section>
 
-      <section className="w-full text-white mb-20 px-10 py-12 lg:py-20 flex justify-center relative" style={{ backgroundImage: 'url(/images/hero-bg.webp' }} id="nosotros">
+      <section className="w-full text-white mb-20 px-5 md:px-10 py-12 lg:py-20 flex justify-center relative" style={{ backgroundImage: 'url(/images/hero-bg.webp' }} id="nosotros">
         <div className="w-full h-full absolute left-0 top-0 opacity-80  primary-gradient"></div>
-        <div className="flex flex-col lg:flex-row w-full max-w-screen-xl z-10">
-          <div className="w-full lg:w-1/2 mb-10 px-8 lg:mb-0">
+        <div className="flex flex-col md:flex-row w-full max-w-screen-xl z-10">
+          <div className="w-full lg:w-1/2 mb-10 md:px-8 lg:mb-0">
             <h2 className="text-amber-300">Acerca de EquipLinkPro</h2>
             <p className="mb-5">Una solución innovadora que transformará la forma en que adquiere equipos de construcción</p>
             <p className="mb-5">En <b>EquipLinkPro</b>, comprendemos el papel fundamental que desempeñan los equipos en el éxito de sus proyectos. Por eso, hemos desarrollado un enfoque revolucionario para la intermediación de equipos. Nuestras listas mensuales de equipos cuentan con una selección cuidadosa de maquinaria funcional y bien mantenida, cada una con las horas de uso registradas meticulosamente.</p>
           </div>
-          <div className="w-full lg:w-1/2 px-10">
+          <div className="w-full lg:w-1/2 md:px-10">
             <Carousel>
               {reviews.map((review, i) => <ReviewCard key={i} {...review} />)}
             </Carousel>
@@ -139,27 +139,20 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="max-w-screen-md mx-auto flex flex-col w-full items-center pt-20" id="contacto">
+      <section className="max-w-screen-md mx-auto flex flex-col w-full px-5 md:px-10 items-center pt-20" id="contacto">
         <h2 className="text-amber-400">Contáctanos</h2>
-        <p className="mb-6 text-xl text-center">¿Listo para experimentar una nueva era en la adquisición de equipos de construcción?</p>
-        <p className="mb-20 text-xl text-center">Comuníquese con nosotros hoy mismo para discutir cómo EquipLinkPro puede ser su socio de confianza en el éxito de su empresa.</p>
+        <p className="mb-6 text-base md:text-xl text-center">¿Listo para experimentar una nueva era en la adquisición de equipos de construcción?</p>
+        <p className="mb-20 text-base md:text-xl text-center">Comuníquese con nosotros hoy mismo para discutir cómo EquipLinkPro puede ser su socio de confianza en el éxito de su empresa.</p>
         <ul className="flex flex-col gap-10 md:flex-row justify-around mb-20">
-          <li className="flex flex-col gap-3">
+          <li className="flex flex-col gap-3 text-center items-center">
             <h3>Santa Mónica</h3>
             <hr className="w-10 bg-amber-300 h-0.5 border-none"/>
             <p>1904 11th St, Santa Monica, CA 90404</p>
             <p><a className="hover:underline font-medium text-blue-800" href="tel:(619) 221-4343">+1(310)720-3279</a></p>
             <p><a className="hover:underline font-medium text-blue-800" href="mailto:dmartinez@equiplinkpro.com">dmartinez@equiplinkpro.com</a></p>
           </li>
-          <li className="flex flex-col gap-3">
-            <h3>Tijuana</h3>
-            <hr className="w-10 bg-amber-300 h-0.5 border-none"/>
-            <p>1904 11th St, Santa Monica, CA 90404</p>
-            <p><a className="hover:underline font-medium text-blue-800" href="tel:(619) 221-4343">+1(310)720-3279</a></p>
-            <p><a className="hover:underline font-medium text-blue-800" href="mailto:dmartinez@equiplinkpro.com">dmartinez@equiplinkpro.com</a></p>
-          </li>
         </ul>
-        <p className="text-xl text-center w-2/3">Gracias por considerar a <b>EquipLinkPro.</b> Esperamos con interés la oportunidad de apoyar sus esfuerzos en la construcción. Quedamos a sus ordenes para cualquier duda o aclaración.</p>
+        <p className="text-base md:text-xl text-center w-2/3">Gracias por considerar a <b>EquipLinkPro.</b> Esperamos con interés la oportunidad de apoyar sus esfuerzos en la construcción. Quedamos a sus ordenes para cualquier duda o aclaración.</p>
       </section>
 
       <footer className="max-w-screen-lg mx-auto w-full px-4 lg:px-0 pt-20">
